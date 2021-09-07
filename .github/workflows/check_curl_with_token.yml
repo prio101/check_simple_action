@@ -8,4 +8,4 @@ jobs:
       - name: install curl
         run:  sudo apt-get install curl
       - name: check request
-        run:  curl -i -u prio101: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 https://api.github.com/users/prio101 
+        run:  curl -i -u prio101:$token https://api.github.com/users/prio101 
