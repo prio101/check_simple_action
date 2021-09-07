@@ -1,10 +1,12 @@
 on: push
+name: "Curl it out"
+
 jobs:
   curl:
+    name: Check
     runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@master
-    - name: curl
-      uses: wei/curl@v1
-      with:
-        args: -i -u prio101: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 https://api.github.com/users/prio101
+  steps:
+    - name: install curl
+      run: apt-get install curl
+    - name: check request
+      run:  curl -i -u prio101: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 https://api.github.com/users/prio101 
